@@ -68,7 +68,7 @@ class App extends Component {
                                        error={this.state.error} /> } 
           />
           <Route exact path="/dashboard" 
-                 render={ () =>  <Dashboard siteName={this.state.site} /> }
+                 render={ () =>  <Dashboard siteName={this.state.site.toUpperCase()} /> }
           />
         </div>
     );
