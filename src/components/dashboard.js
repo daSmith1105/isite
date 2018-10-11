@@ -15,16 +15,18 @@ class Dashboard extends React.Component {
     componentDidMount() {
         fetch(`https://${this.props.siteName}.dividia.net/ajax.php?action=getEvents&date=10/08/18`)
         .then(
-            function(response) {
-              if (response.status !== 200) {
+            function(res) {
+              if (res.status !== 200) {
                 console.log('Looks like there was a problem. Status Code: ' +
-                  response.status);
+                  res.status);
                 return;
               }
         
-              // Examine the text in the response
-              response.json().then(function(data) {
-                console.log(data);
+              res.json().then(function(data) {
+                  let imgArr = JSON.stringify(data.filter(d => d.sType==="STILL"));
+                  let vidArr = JSON.stringify(data.filter(d => d.sType==="VIDEO"));
+                  console.log(`----- Images -----` + imgArr);
+                  console.log(`----- Videos -----` + vidArr);
               });
             }
           )
@@ -37,7 +39,6 @@ class Dashboard extends React.Component {
     return (
         <div>
             <h1>Welcome to the { this.props.siteName } iSite Page</h1>
-            <p>{ this.state.data !== '' ? this.state.data : null }</p>
         </div>
         )
     }
