@@ -1,26 +1,76 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Route } from 'react-router-dom';
+import history from './history';
+import Login from './components/login';
+import Dashboard from './components/dashboard';
 import './App.css';
 
+const sites = [
+  'birch',
+  'gte'
+];
+
+
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      site: '',
+      error: false,
+      loading: false
+    };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  
+  }
+
+ handleSubmit(e) {
+   e.preventDefault();
+
+   if(sites.includes(this.state.site)) {
+    this.setState({
+      error: false,
+      loading: true
+    });
+     history.push('/dashboard');
+   } else {
+    this.setState({ 
+      error: true },
+      function(){
+        setTimeout(() => {
+          this.setState({
+            error: false
+          })
+        }, 10000);
+      });
+   }
+ };
+
+ handleChange(e) {
+    let name = e.target.name;
+    let value = e.target.value;
+    this.setState({
+      [name]: value
+    });
+ };
+
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+        <div className="App">
+          <Route exact path="/" 
+                 render={ () => <Login handleSubmit={this.handleSubmit} 
+                                       handleChange={this.handleChange} 
+                                       site={this.state.site}
+                                       error={this.state.error} /> } 
+          />
+          <Route exact path="/dashboard" 
+                 render={ () =>  <Dashboard siteName={this.state.site} /> }
+          />
+        </div>
     );
   }
 }
