@@ -2,6 +2,8 @@ import React from 'react';
 import ActionContainer from './action-container';
 import Thumbnails from './thumbnails';
 import Viewer from './viewer';
+import history from '../history';
+import moment from 'moment';
 
 class Dashboard extends React.Component {
 
@@ -10,6 +12,7 @@ class Dashboard extends React.Component {
 
         this.state = {
             data: [],
+            date: moment(new Date()).format('MM/DD/YY'),
             imgArr: [],
             vidArr: [],
             currentImg: '',
@@ -18,12 +21,35 @@ class Dashboard extends React.Component {
             error: false
         }
         this.handleSwap = this.handleSwap.bind(this)
+        this.fetchNewByDate = this.fetchNewByDate.bind(this)
+        this.dateUpdate = this.dateUpdate.bind(this)
     }
 
 
     componentDidMount() {
+        if(this.props.siteName === '') {
+            history.push('/')
+        } else{
+            this.fetchNewByDate();
+        }
+    }
+
+    handleSwap(e) {
+        let target = e.currentTarget.name;
+        this.setState({
+            currentImg: target
+        });
+    }
+
+    dateUpdate(newDate) {
+        this.setState({date : newDate}, function() {
+            this.fetchNewByDate()
+        })
+    }
+
+    fetchNewByDate() {
         let currentSite = `https://${this.props.siteName}.dividia.net/`;
-        fetch(`${currentSite}ajax.php?action=getEvents&date=10/08/18`)
+        fetch(`${currentSite}ajax.php?action=getEvents&date=${this.state.date}`)
         .then( response => {
               if (response.status !== 200) {
                 console.log('Error. Status Code: ' + response.status);
@@ -42,22 +68,15 @@ class Dashboard extends React.Component {
                 })
           .catch(err => {
             console.log('Fetch Error: ', err);
-          });
-        })
-    }
-
-    handleSwap(e) {
-        let target = e.currentTarget.name;
-        this.setState({
-            currentImg: target
-        });
+                });
+            })
     }
 
     render() {
     return (
         <div>
-            <h1>Welcome to the { this.props.siteName } iSite Page</h1>
-                <ActionContainer />
+            <h1>{ this.props.siteName } iSite</h1>
+                <ActionContainer dateSet={this.dateUpdate} />
                 <Thumbnails siteName={this.props.siteName} 
                             imgData={this.state.imgArr}
                             vidData={this.state.vidArr}
@@ -69,4 +88,4 @@ class Dashboard extends React.Component {
     }
 }
 
-export default Dashboard;
+export default (Dashboard);

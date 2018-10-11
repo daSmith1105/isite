@@ -1,5 +1,6 @@
 import React from 'react';
 import DatePicker from 'react-date-picker';
+import moment from 'moment';
  
 class DateSelect  extends React.Component {
         
@@ -9,7 +10,7 @@ class DateSelect  extends React.Component {
  
   onChange = date => {
       this.setState({ date }, function() {
-          this.props.onDateSelect(date);
+          this.props.onDateSelect(moment(date).format('MM/DD/YY'));
       })
     }
  

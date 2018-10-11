@@ -10,15 +10,18 @@ class ActionContainer extends React.Component {
         super(props);
 
         this.state = {
-            stuff: ''
+            date: ''
         }
         this.handleSetDate = this.handleSetDate.bind(this);
     }
 
     handleSetDate(dateVal) {
-        this.setState({ date: dateVal }, 
-        function() { console.log(this.state.date)})
+        this.setState({ date: dateVal }, function() {
+        this.props.dateSet(this.state.date)
+        })
     }
+    
+
         render() {
             return (
                 <div>
