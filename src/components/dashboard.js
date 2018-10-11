@@ -4,6 +4,7 @@ import Thumbnails from './thumbnails';
 import Viewer from './viewer';
 import history from '../history';
 import moment from 'moment';
+import '../App.css';
 
 class Dashboard extends React.Component {
 
@@ -72,10 +73,15 @@ class Dashboard extends React.Component {
             })
     }
 
+    back() {
+        history.push('/');
+    }
+
     render() {
     return (
         <div>
             <h1>{ this.props.siteName } iSite</h1>
+                <button className="back" onClick={this.back}>BACK</button>
                 <ActionContainer dateSet={this.dateUpdate} />
                 <Thumbnails siteName={this.props.siteName} 
                             imgData={this.state.imgArr}

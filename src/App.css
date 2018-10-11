@@ -15,6 +15,16 @@
 
 /* Dashboard Styling */
 
+.back {
+  position: absolute;
+  top: 40px;
+  left: 10%;
+  border: 2px solid black;
+  border-radius: .5em;
+  padding: .5em;
+  background: transparent;
+}
+
 /* Date Picker */
 
 .date-picker {
