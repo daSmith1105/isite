@@ -13,6 +13,12 @@
   text-align: center;
 }
 
+.site-input {
+  border-bottom: 2px solid black;
+  margin-right: .5em;
+  width: 100px;
+}
+
 /* Dashboard Styling */
 
 .back {

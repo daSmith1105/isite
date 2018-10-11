@@ -1,4 +1,5 @@
 import React from 'react';
+import '../App.css';
 
 const Login = props => {
 
@@ -13,6 +14,7 @@ const Login = props => {
                 <input onChange={ props.handleChange } 
                        value={ props.site.value } 
                        name="site" 
+                       className="site-input"
                        required />
                 <span>. dividia.net</span>
                 <br />
