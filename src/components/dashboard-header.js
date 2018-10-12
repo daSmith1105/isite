@@ -31,7 +31,7 @@ class Header extends React.Component {
                          src={Logo} 
                          alt="logo" 
                          onClick={ () => history.pushState('/') } />
-                </div>
+                </div>   
             )
         }
 }
