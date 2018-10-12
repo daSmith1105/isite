@@ -36,14 +36,15 @@
 .loading-overlay {
   height: 100vh;
   width: 100vw;
-  position: static;
+  position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(0,0,0,.1);
+  background-color: rgba(0,0,0,.7);
   transition: 1s;
   -moz-box-shadow:    inset 10px 40px 60px #000000;
   -webkit-box-shadow: inset 10px 0 80px #000000;
   box-shadow:         inset 0 0 60px #000000;
+  z-index: 5;
 }
 
 .loading-container {
@@ -104,8 +105,8 @@
 .logo {
   position: absolute;
   top: 14px;
-  right: 8%;
-  height: 60px;
+  right: 4%;
+  height: 70px;
   width: auto;
 }
 
@@ -140,7 +141,7 @@
   background: lightgrey;
 }
 
-.play {
+/* .play {
 }
 
 .events {
@@ -148,14 +149,14 @@
 
 .snap {
  
-}
+} */
 
 .play-btn, .events-btn, .snap-btn, .back-btn {
   height: 30px;
   width: 30px;
 }
 
-.play-btn:hover, .events-btn:hover, .snap-btn:hover, .back-btn:hover {
+/* .play-btn:hover, .events-btn:hover, .snap-btn:hover, .back-btn:hover {
   
 }
 
@@ -168,6 +169,14 @@
 
 .snap-btn {
 
+} */
+
+#show {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 10;
+  background: rgba(0,0,0,.6);
 }
 
 /* Thumbnail container */

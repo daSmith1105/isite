@@ -4,6 +4,7 @@ import Thumbnails from './thumbnails';
 import Viewer from './viewer';
 import Footer from './dashboard-footer';
 import Loading from './loading';
+// import fetchJsonp from 'fetch-jsonp';
 import history from '../history';
 import moment from 'moment';
 import '../App.css';
@@ -54,7 +55,7 @@ class Dashboard extends React.Component {
         this.setState({
             loading: true
         });
-        let currentSite = `https://${this.props.siteName}.dividia.net/`;
+        let currentSite = `https://cors-anywhere.herokuapp.com/https://${this.props.siteName}.dividia.net/`;
         fetch(`${currentSite}ajax.php?action=getEvents&date=${this.state.date}`)
         .then( response => {
               if (response.status !== 200) {
@@ -68,7 +69,7 @@ class Dashboard extends React.Component {
                      data,
                      imgArr: images,
                      vidArr: videos,
-                     defaultImg: `${currentSite}${images[0].sImage}` || `https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjekayvk__dAhVLOq0KHRgiD40QjRx6BAgBEAU&url=http%3A%2F%2Ftest.vietnamtool.vn%2Fbua-nho-dinh-can-sat-16oz-450g-2158&psig=AOvVaw3nUrnZhkplOcUVObu4Jp6I&ust=1539373475012880`,
+                     defaultImg: `${currentSite}${images[0].sImage}` || `https://cors-anywhere.herokuapp.com/https://www.naqda.gov.lk/images/img_not_available.png`,
                      loading: false
                     });
                 })
@@ -93,7 +94,7 @@ class Dashboard extends React.Component {
                             onSwap={this.handleSwap}
                             />
                 <Viewer focusImg={this.state.currentImg} defaultImg={this.state.defaultImg} />
-                <Footer />
+                <Footer focusImg={this.state.currentImg} defaultImg={this.state.defaultImg}/>
         </div>
         )
     }

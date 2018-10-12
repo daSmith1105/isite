@@ -12,17 +12,16 @@ class Footer extends React.Component {
         this.state = {
             date: ''
         }
-
     }
     
-
         render() {
+            
             return (
                 <div className="dash-footer">
                     <Back />
                     <Play />
                     <Events />
-                    <Snap />
+                    <Snap snapIt={ this.props } />
                 </div>
             )
         }

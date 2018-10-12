@@ -2,6 +2,7 @@ import React from 'react';
 import DateSelect from './date-select';
 import history from '../history';
 import '../App.css'
+import Logo from './i-sitelogo.png';
 
 class Header extends React.Component {
     constructor(props) {
@@ -27,7 +28,7 @@ class Header extends React.Component {
                     <p className="dividia-name">Dividia Technologies</p>
                     <DateSelect onDateSelect={this.handleSetDate} />
                     <img className="logo" 
-                         src="https://www.fixpocket.com/public_assets/uploads/beats/1496218155Logo_1.png" 
+                         src={Logo} 
                          alt="logo" 
                          onClick={ () => history.pushState('/') } />
                 </div>
