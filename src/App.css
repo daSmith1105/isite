@@ -68,12 +68,6 @@
 
 /* Dashboard Styling */
 
-.site-name {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-}
-
 .dashboard {
 
 }
@@ -83,13 +77,36 @@
 .dash-header {
   margin-top: 30px;
   padding-top: 20px;
-  width: 95%;
+  width: 100%;
+}
+.site-name {
+  position: absolute;
+  top: 3px;
+  left: 5%;
+  font-size: 80%;
+  font-weight: bold
+}
+
+.dividia-name {
+  position: absolute;
+  top: 18px;
+  left: 5%;
+  font-size: 80%;
+  font-weight: bold;
 }
 
 .date-picker {
   float: left;
   margin-left: 5%;
   margin-bottom: 10px;
+}
+
+.logo {
+  position: absolute;
+  top: 14px;
+  right: 8%;
+  height: 60px;
+  width: auto;
 }
 
 /* Footer styling */
@@ -197,6 +214,7 @@
 
 .thumb-time {
   font-size: 50%;
+  font-weight: bold;
 }
 
 /* Viewer container */

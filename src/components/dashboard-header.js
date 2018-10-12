@@ -1,5 +1,6 @@
 import React from 'react';
 import DateSelect from './date-select';
+import history from '../history';
 import '../App.css'
 
 class Header extends React.Component {
@@ -23,7 +24,12 @@ class Header extends React.Component {
             return (
                 <div className="dash-header">
                     <p className="site-name">Site: { this.props.siteName }</p>
+                    <p className="dividia-name">Dividia Technologies</p>
                     <DateSelect onDateSelect={this.handleSetDate} />
+                    <img className="logo" 
+                         src="https://www.fixpocket.com/public_assets/uploads/beats/1496218155Logo_1.png" 
+                         alt="logo" 
+                         onClick={ () => history.pushState('/') } />
                 </div>
             )
         }
