@@ -4,7 +4,6 @@ import Thumbnails from './thumbnails';
 import Viewer from './viewer';
 import Footer from './dashboard-footer';
 import Loading from './loading';
-// import fetchJsonp from 'fetch-jsonp';
 import history from '../history';
 import moment from 'moment';
 import '../App.css';
@@ -16,7 +15,7 @@ class Dashboard extends React.Component {
 
         this.state = {
             data: [],
-            date: moment(new Date()).format('MM/DD/YY'),
+            date: '' || moment(new Date()).format('MM/DD/YY'),
             imgArr: [],
             vidArr: [],
             currentImg: '',
@@ -53,7 +52,14 @@ class Dashboard extends React.Component {
 
     fetchNewByDate() {
         this.setState({
-            loading: true
+            loading: true,
+            data: [],
+            date: '' || moment(new Date()).format('MM/DD/YY'),
+            imgArr: [],
+            vidArr: [],
+            currentImg: '',
+            defaultImg: '',
+            error: false
         });
         let proxy = 'https://cors-anywhere.herokuapp.com/';
         let currentSite = `https://${this.props.siteName}.dividia.net/`;
@@ -67,7 +73,7 @@ class Dashboard extends React.Component {
                   let images = data.filter(d => d.sType==="STILL");
                   let videos = data.filter(d => d.sType==="VIDEO");
                   this.setState({
-                     data,
+                     data: data,
                      imgArr: images,
                      vidArr: videos,
                      defaultImg: `${currentSite}${images[0].sImage}` || `https://www.naqda.gov.lk/images/img_not_available.png`,

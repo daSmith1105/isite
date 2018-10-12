@@ -14,7 +14,7 @@ const Snap = (props) => {
                 id="test"
                 src="https://static.thenounproject.com/png/28423-200.png"
                 alt="snapshot"
-                onClick={() => console.log('clicked')}
+                onClick={() => console.log(`${props.snapIt.defaultImg}:${props.snapIt.focusImg}`)}
                 />
         </div>
             <p className="desc">Snapshot</p>
