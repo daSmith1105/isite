@@ -18,7 +18,6 @@ const Snap = (props) => {
                 />
         </div>
             <p className="desc">Snapshot</p>
-            <div id="show"></div>
         </div>
     )
 }
