@@ -1,7 +1,8 @@
 import React from 'react';
-import ActionContainer from './action-container';
+import Header from './dashboard-header';
 import Thumbnails from './thumbnails';
 import Viewer from './viewer';
+import Footer from './dashboard-footer';
 import history from '../history';
 import moment from 'moment';
 import '../App.css';
@@ -79,16 +80,15 @@ class Dashboard extends React.Component {
 
     render() {
     return (
-        <div>
-            <h1>{ this.props.siteName } iSite</h1>
-                <button className="back" onClick={this.back}>BACK</button>
-                <ActionContainer dateSet={this.dateUpdate} />
+        <div className="dashboard">
+                <Header dateSet={this.dateUpdate} siteName={this.props.siteName} />
                 <Thumbnails siteName={this.props.siteName} 
                             imgData={this.state.imgArr}
                             vidData={this.state.vidArr}
                             onSwap={this.handleSwap}
                             />
                 <Viewer focusImg={this.state.currentImg} defaultImg={this.state.defaultImg} />
+                <Footer />
         </div>
         )
     }

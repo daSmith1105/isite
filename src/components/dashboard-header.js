@@ -1,11 +1,8 @@
 import React from 'react';
 import DateSelect from './date-select';
-import Play from './play';
-import Events from './events';
-import Snap from './snap';
 import '../App.css'
 
-class ActionContainer extends React.Component {
+class Header extends React.Component {
     constructor(props) {
         super(props);
 
@@ -24,14 +21,12 @@ class ActionContainer extends React.Component {
 
         render() {
             return (
-                <div>
+                <div className="dash-header">
+                    <p className="site-name">Site: { this.props.siteName }</p>
                     <DateSelect onDateSelect={this.handleSetDate} />
-                    <Play />
-                    <Events />
-                    <Snap />
                 </div>
             )
         }
 }
 
-export default ActionContainer;
+export default Header;

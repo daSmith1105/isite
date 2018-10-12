@@ -9,11 +9,10 @@ const Login = props => {
             <form onSubmit={ props.handleSubmit }> 
                 <h1>Please enter your company name below</h1>
                 <br />
-                {props.error === true ? <p className="error">Site not found!</p> : <p></p> }
+                {props.error === true ? <p className="error">Sorry!Site not found!</p> : <p></p> }
                 <br />
                 <input onChange={ props.handleChange } 
                        value={ props.site.value } 
-                       name="site" 
                        className="site-input"
                        required />
                 <span>. dividia.net</span>

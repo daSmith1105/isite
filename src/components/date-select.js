@@ -1,8 +1,9 @@
 import React from 'react';
 import DatePicker from 'react-date-picker';
 import moment from 'moment';
+import '../App.css';
  
-class DateSelect  extends React.Component {
+class DateSelect extends React.Component {
         
     state = {
         date: new Date(),
