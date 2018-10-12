@@ -55,8 +55,9 @@ class Dashboard extends React.Component {
         this.setState({
             loading: true
         });
-        let currentSite = `https://cors-anywhere.herokuapp.com/https://${this.props.siteName}.dividia.net/`;
-        fetch(`${currentSite}ajax.php?action=getEvents&date=${this.state.date}`)
+        let proxy = 'https://cors-anywhere.herokuapp.com/';
+        let currentSite = `https://${this.props.siteName}.dividia.net/`;
+        fetch(`${proxy}${currentSite}ajax.php?action=getEvents&date=${this.state.date}`)
         .then( response => {
               if (response.status !== 200) {
                 console.log('Error. Status Code: ' + response.status);
@@ -69,7 +70,7 @@ class Dashboard extends React.Component {
                      data,
                      imgArr: images,
                      vidArr: videos,
-                     defaultImg: `${currentSite}${images[0].sImage}` || `https://cors-anywhere.herokuapp.com/https://www.naqda.gov.lk/images/img_not_available.png`,
+                     defaultImg: `${currentSite}${images[0].sImage}` || `https://www.naqda.gov.lk/images/img_not_available.png`,
                      loading: false
                     });
                 })
