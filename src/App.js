@@ -52,7 +52,7 @@ class App extends Component {
  handleChange(e) {
     let value = e.target.value;
     this.setState({
-      site: value.trim()
+      site: value.trim().toLowerCase()
     });
  };
 
