@@ -73,6 +73,7 @@
 .dashboard {
   max-width: 100vw;
   max-height: 100vh;
+  zoom: 1;
 }
 
     /* Header styling */
