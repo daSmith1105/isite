@@ -10,10 +10,14 @@ class DateSelect extends React.Component {
     }
  
   onChange = date => {
+      if(date > new Date()) {
+          console.log('Date is in the future')
+      } else {
       this.setState({ date }, function() {
           this.props.onDateSelect(moment(date).format('MM/DD/YY'));
       })
     }
+}
  
   render() {
     return (
