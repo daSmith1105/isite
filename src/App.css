@@ -190,7 +190,8 @@
   margin: 0;
   padding: 0;
   white-space: nowrap;
-  overflow: auto;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
   overflow-y: hidden;
   -ms-overflow-y: hidden;
   margin-right: auto;
