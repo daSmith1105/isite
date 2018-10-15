@@ -1,4 +1,5 @@
 import React from 'react';
+import '../App.css';
 
 class Thumbnails extends React.Component {
     
@@ -10,6 +11,10 @@ class Thumbnails extends React.Component {
             let fullImg = `https://${siteName}.dividia.net/${image.sImage}`;
             let hour = image.sTimeStamp.split('').slice(8, 10).join('');
             let minute = image.sTimeStamp.split('').slice(10, 12).join('');
+            let month = image.sTimeStamp.split('').slice(4, 6).join('');
+            let day = image.sTimeStamp.split('').slice(6, 8).join('');
+            let year = image.sTimeStamp.split('').slice(0, 4).join('');
+            let fullDate = `${month}/${day}/${year}`
             let daynight = '';
             switch(hour) {
                 case '00': hour = 12; daynight = 'AM';
@@ -61,14 +66,20 @@ class Thumbnails extends React.Component {
                 case '23': hour = 11; daynight = 'PM';
                     break;
                 default: hour = image.sTimeStamp.split('').slice(8, 10).join('')
-
             }
-                
+
+            let thumbTime = `${hour}:${minute} ${daynight}`;  
+            let dateAndTime = `${fullDate}   ${thumbTime}`;
             return (
                 <li className="thumb-li" key={image.bID}>
-                    <img className="thumb-img" src={thumb} alt="img" name={fullImg} onClick={onSwap} />
+                    <img className="thumb-img" 
+                         src={thumb} 
+                         alt="img" 
+                         name={fullImg} 
+                         dateTime= {dateAndTime}
+                         onClick={onSwap} /> 
                     <br />
-                    <span className="thumb-time">{`${hour}:${minute} ${daynight}`}</span>
+                    <span className="thumb-time">{thumbTime}</span>
             </li> )
             })
         return( 
