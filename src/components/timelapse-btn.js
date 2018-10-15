@@ -2,13 +2,14 @@ import React from 'react';
 import Timelapse from './timelapse';
 import '../App.css';
 
-class Play extends React.Component {
+class TimelapseBtn extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
             showPicker: false
         }
+        this.closePicker = this.closePicker.bind(this);
     }
 
     closePicker() {
@@ -20,7 +21,6 @@ class Play extends React.Component {
         render() {
 
         return(
-
             <div className="btn-group">
                 <div className="play">
                     <img className="play-btn"
@@ -39,4 +39,4 @@ class Play extends React.Component {
     }
 }
 
-export default Play;
+export default TimelapseBtn;

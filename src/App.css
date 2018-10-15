@@ -74,6 +74,7 @@
   max-width: 100vw;
   max-height: 100vh;
   zoom: 1;
+  position: fixed;
 }
 
     /* Header styling */
@@ -264,12 +265,130 @@
 
 /* Timelapse */
 
+.timelapse-wrapper {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,.7);
+  transition: 1s;
+  -moz-box-shadow:    inset 10px 40px 60px #000000;
+  -webkit-box-shadow: inset 10px 0 80px #000000;
+  box-shadow:         inset 0 0 60px #000000;
+  z-index: 5;
+}
+
 .timelapse-container {
   position: absolute;
   top: 10vh;
   left: 10vw;
-  height: 80vh;
+  height: 55vh;
   width: 80vw;
-  background-color: red;
+  background-color: grey;
   z-index: 10;
+  border-radius: 1em;
+}
+
+.cancel {
+  font-size: 150%;
+  position: absolute;
+  top: 5px;
+  left: 5px;;
+  color: white;
+  font-weight: bold;
+}
+
+.timelapse-heading {
+  margin-top: 2em;
+  font-size: 140%;
+}
+
+.date-error {
+  color: red;
+  font-size: 90%;
+  background: rgba(255,255,255,.6);
+  padding: .5em;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: .5em;
+}
+
+.timelapse-container label {
+  font-size: 90%;
+  font-weight: bold;
+  margin: .5em;
+}
+
+.timelapse-end {
+  margin-top: 1em;
+}
+
+.timelapse-container input {
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 90%;
+  border-radius: .5em;
+  width: 130px;
+}
+
+.timelapse-submit-btn {
+  margin-top: 1.5em;
+  font-size: 120%;
+  font-weight: bold;
+  padding: .25em;
+  border: 2px solid black;
+  border-radius: .5em;
+}
+
+/* Events styling  */
+
+.events-wrapper {
+  min-height: 100%;
+  min-width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,.7);
+  transition: 1s;
+  -moz-box-shadow:    inset 10px 40px 60px #000000;
+  -webkit-box-shadow: inset 10px 0 80px #000000;
+  box-shadow:         inset 0 0 60px #000000;
+  z-index: 5;
+}
+
+.events-container {
+  width: 300px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: grey;
+  transition: 1s;
+  border-left: rgba(0,0,0,.8);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.events-container h1 {
+  font-size: 160%;
+}
+
+.video-event-li {
+  list-style-type: none;
+  padding: .25em;
+  border: 2px solid black;
+  border-radius: 1em;
+  background-color: lightgrey;
+  margin: .25em;
+  width: 100%;
+  position: relative;
+  right: 25px;
+}
+
+.video-event-li p {
+  font-size: 90%;
+  font-weight: bold;
 }

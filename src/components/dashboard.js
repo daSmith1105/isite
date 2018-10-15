@@ -168,7 +168,7 @@ class Dashboard extends React.Component {
                             onSwap={this.handleSwap}
                             />
                 <Viewer focusImg={this.state.currentImg} defaultImg={this.state.defaultImg} timeStamp={this.state.currentThumbTime} />
-                <Footer focusImg={this.state.currentImg} defaultImg={this.state.defaultImg}/>
+                <Footer focusImg={this.state.currentImg} defaultImg={this.state.defaultImg} vids={this.state.vidArr} />
         </div>
         )
     }

@@ -1,7 +1,7 @@
 import React from 'react';
 import Back from './back-btn';
-import Play from './play-btn';
-import Events from './events-btn';
+import TimelapseBtn from './timelapse-btn';
+import EventsBtn from './events-btn';
 import Snap from './snap-btn';
 import '../App.css'
 
@@ -19,8 +19,8 @@ class Footer extends React.Component {
             return (
                 <div className="dash-footer">
                     <Back />
-                    <Play />
-                    <Events />
+                    <TimelapseBtn />
+                    <EventsBtn vidArr={this.props.vids} />
                     <Snap snapIt={ this.props } />
                 </div>
             )
