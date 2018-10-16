@@ -1,11 +1,14 @@
 import React from 'react';
 import '../App.css';
+import Logo from './main-logo.jpg';
 
 const Login = props => {
 
 
     return (
-        <div>
+        <div className="dash-container">
+            <p className="dividia">DIVIDIA TECHNOLOGIES</p>
+            <img className="main-logo" src={Logo} alt="logo" />
             <form onSubmit={ props.handleSubmit }> 
                 <h1>Please enter your company name below</h1>
                 <br />
@@ -15,7 +18,7 @@ const Login = props => {
                        value={ props.site.value } 
                        className="site-input"
                        required />
-                <span>. dividia.net</span>
+                <span>.dividia.net</span>
                 <br />
                 <br />
                 <button type="submit">SUBMIT</button>

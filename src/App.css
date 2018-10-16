@@ -65,10 +65,65 @@
 
 /* Login style */
 
+.dash-container {
+  padding-top: .2em;
+}
+
+.dash-container h1 {
+  font-size: 130%;
+  padding: 1em;
+  margin-bottom: -1em;
+  margin-top: -.25em;
+}
+
+.dividia {
+  font-size: 160%;
+  font-weight: bold;
+  opacity: .6;
+  color: black;
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,.5);
+}
+
 .site-input {
   border-bottom: 2px solid black;
   margin-right: .5em;
   width: 100px;
+  border: 2px solid black;
+  border-radius: .5em;
+  padding: .25em;
+  font-size: 120%;
+  font-weight: bold;
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,.5);
+  text-align: center;
+}
+
+.dash-container span {
+  font-size: 120%;
+  font-weight: bold;
+}
+
+.main-logo {
+  height: 140px;
+  width: 140px;
+  border-radius: 50%;
+}
+
+.dash-container button {
+  font-size: 160%;
+  font-weight: bold;
+  padding: .25em;
+  border: 2px solid black;
+  border-radius: .5em;
+  background: transparent;
+  margin-top: 1em;
+  transition: .5s;
+}
+
+.dash-container button:hover {
+  cursor: pointer;
+  border: 2px solid green;
+  background-color: green;
+
 }
 
 /* Dashboard Styling */
@@ -294,10 +349,13 @@
 .timelapse-container {
   position: absolute;
   top: 10vh;
-  left: 10vw;
-  height: 58vh;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 340px;
   width: 80vw;
-  background-color: grey;
+  max-width: 400px;
+  background: url('./steel.jpg');
   z-index: 10;
   border-radius: 1em;
 }
@@ -309,7 +367,14 @@
   left: 5px;;
   color: white;
   font-weight: bold;
+  border-radius: .5em;
+  box-shadow: 1px 1px 2px 2px rgba(0,0,0,.5);
 }
+
+.cancel:hover {
+  cursor: pointer;
+}
+
 
 .timelapse-heading {
   margin-top: 3em;
@@ -352,8 +417,15 @@
   padding: .25em;
   border: 2px solid black;
   border-radius: .5em;
+  transition: .5s;
 }
 
+.timelapse-submit-btn:hover {
+  cursor:pointer;
+  background-color: green;
+  border: 2px solid green;
+  color: white;
+}
 /* Events styling  */
 
 .events-wrapper {
@@ -368,6 +440,7 @@
   -webkit-box-shadow: inset 10px 0 80px #000000;
   box-shadow:         inset 0 0 60px #000000;
   z-index: 5;
+  transition: 1s;
 }
 
 .events-container {
@@ -384,6 +457,8 @@
   overflow-x: hidden;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
+  border-left: 4px solid rgba(255,255,255,.9);
+  box-shadow: 2px 2px 4px 10px rgba(0,0,0,.9);
 }
 
 .events-container h1 {
@@ -401,6 +476,8 @@
   width: 100%;
   position: relative;
   right: 25px;
+  transition: 1s;
+  box-shadow: 2px 2px 2px 2px rgba(0,0,0,.5);
 }
 
 .video-event-li p {
@@ -412,6 +489,7 @@
 .progress-block {
   display: inline;
 }
+
 #progress-bar-container {
   width: 190px;
   background-color: grey;

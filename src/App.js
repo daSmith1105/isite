@@ -7,7 +7,8 @@ import './App.css';
 
 const sites = [
   'birch',
-  'gte'
+  'gte',
+  'isite'
 ];
 
 
