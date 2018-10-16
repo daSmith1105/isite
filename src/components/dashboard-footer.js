@@ -2,7 +2,7 @@ import React from 'react';
 import Back from './back-btn';
 import TimelapseBtn from './timelapse-btn';
 import EventsBtn from './events-btn';
-import Snap from './snap-btn';
+import OptionsBtn from './options-btn';
 import '../App.css'
 
 class Footer extends React.Component {
@@ -21,7 +21,7 @@ class Footer extends React.Component {
                     <Back />
                     <TimelapseBtn />
                     <EventsBtn vidArr={this.props.vids} />
-                    <Snap snapIt={ this.props } />
+                    <OptionsBtn snapIt={ this.props } />
                 </div>
             )
         }

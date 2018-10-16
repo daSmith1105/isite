@@ -2,7 +2,7 @@ import React from 'react';
 import '../App.css';
 
 
-const Snap = (props) => {
+const OptionsBtn = (props) => {
 
 // props.snapIt.defaultImg
 // props.snapIt.focusImg
@@ -12,14 +12,14 @@ const Snap = (props) => {
             <div className="snap">
                 <img className="snap-btn" 
                 id="test"
-                src="https://static.thenounproject.com/png/28423-200.png"
+                src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Windows_Settings_app_icon.png"
                 alt="snapshot"
                 onClick={() => console.log(`${props.snapIt.defaultImg}:${props.snapIt.focusImg}`)}
                 />
         </div>
-            <p className="desc">Snapshot</p>
+            <p className="desc">Options</p>
         </div>
     )
 }
 
-export default Snap;
+export default OptionsBtn;

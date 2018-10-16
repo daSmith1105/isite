@@ -60,7 +60,7 @@ runSearch(e) {
     <div className="timelapse-wrapper">
       <div className="timelapse-container">
        <form onSubmit={this.runSearch}>
-       <button className="cancel" onClick={this.props.close}>&#x274C;</button>
+       <button className="cancel" onClick={this.props.close}><span role="img" aria-label="close">&#x274C;</span></button>
             <h1 className="timelapse-heading">Select dates for timelapse video</h1>
             {((this.state.startDate > this.state.endDate) & this.state.endDate !== '') ? <p className="date-error">End date is before Start date!</p> : '' }
             <div className="timelapse-start">

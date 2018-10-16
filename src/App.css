@@ -4,7 +4,10 @@
 .App {
   text-align: center;
   min-width: 100vw;
-  min-height: 100vh
+  min-height: 100vh;
+  background: url('./steel.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .b-align-center {
@@ -104,14 +107,18 @@
   float: left;
   margin-left: 5%;
   margin-bottom: 10px;
+  background-color: white;
+  box-shadow: 2px 2px 2px 1px rgba(0,0,0, .5);
+  border-radius: .5em;
 }
 
 .logo {
   position: absolute;
-  top: 14px;
+  top: 10px;
   right: 4%;
   height: 70px;
   width: auto;
+  border-radius: .5em;
 }
 
 /* Footer styling */
@@ -131,18 +138,20 @@
 }
 
 .play, .events, .snap, .back {
-  border: 4px solid black;
+  border: 4px solid rgba(227,190,66,1);
   border-radius: 1em;
   padding: .25em;
   margin: .5em;
   transition: .5s;
   width: 35px;
   box-shadow: 1px 1px 1px 1px rgba(0,0,0,.5);
+  background-color: rgba(227,190,66,1);
+  font-weight: bold;
 }
 
 .play:hover, .events:hover, .snap:hover, .back:hover{
   cursor: pointer;
-  background: lightgrey;
+  background-color: transparent;
 }
 
 /* .play {
@@ -188,7 +197,7 @@
 .thumb-container {
   list-style: none;
   width: 100%;
-  height: 130px;
+  height: 138px;
   margin: 0;
   padding: 0;
   white-space: nowrap;
@@ -200,7 +209,9 @@
   margin-left: auto;
   border-top: 2px solid grey;
   border-bottom: 2px solid grey; 
-  padding-top: .5em;
+  padding-top: .2em;
+  background-color: rgba(227,190,66,1);
+  box-shadow: 2px 2px 2px 1px rgba(0,0,0,.5); 
 }
 
 .thumb-li {
@@ -211,6 +222,7 @@
  padding: .25em;
  border: 2px solid rgba(0,0,0,0);
  transition: .5s;
+ background-color: white;
 }
 
 .thumb-li:hover {
@@ -283,7 +295,7 @@
   position: absolute;
   top: 10vh;
   left: 10vw;
-  height: 55vh;
+  height: 58vh;
   width: 80vw;
   background-color: grey;
   z-index: 10;
@@ -300,7 +312,7 @@
 }
 
 .timelapse-heading {
-  margin-top: 2em;
+  margin-top: 3em;
   font-size: 140%;
 }
 
@@ -364,7 +376,9 @@
   position: absolute;
   top: 0;
   right: 0;
-  background-color: grey;
+  background: url('./steel.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   transition: 1s;
   border-left: rgba(0,0,0,.8);
   overflow-x: hidden;
@@ -377,11 +391,12 @@
 }
 
 .video-event-li {
+  margin: 0;
   list-style-type: none;
-  padding: .25em;
+  padding: .15em;
   border: 2px solid black;
   border-radius: 1em;
-  background-color: lightgrey;
+  background-color: white;
   margin: .25em;
   width: 100%;
   position: relative;
@@ -391,4 +406,59 @@
 .video-event-li p {
   font-size: 90%;
   font-weight: bold;
+  margin: .25em;
+}
+
+.progress-block {
+  display: inline;
+}
+#progress-bar-container {
+  width: 190px;
+  background-color: grey;
+  border-radius: 1em;
+  float: left;
+  margin-left: .25em;
+  margin-right: .25em;
+  margin-top: .55em;
+}
+
+.progress-bar {
+  width: 2%;
+  height: 10px;
+  background-color: green;
+  border-radius: 50px;
+  margin-left: .1em;
+}
+
+.download-btn {
+  border: 2px solid black;
+  border-radius: .5em;
+  padding: .5em;
+  font-size: 100%;
+  font-weight: bold;
+  clear: both;
+  background: transparent;
+  margin-left: 160px;
+}
+
+.download-btn:hover {
+  background-color: rgba(227,190,66,1);
+  border: 2px solid rgba(227,190,66,1);
+}
+
+.retrieved {
+  border: 2px solid green;
+  border-radius: .5em;
+  padding: .5em;
+  font-size: 100%;
+  font-weight: bold;
+  clear: both;
+  background: green;
+  margin-left: 160px;
+  color: white;
+  width: 85px;
+}
+
+.percentage {
+  float: left;
 }
