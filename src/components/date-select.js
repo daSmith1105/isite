@@ -23,6 +23,7 @@ class DateSelect extends React.Component {
     return (
       <div className="date-picker">
         <DatePicker
+        orientation="bottom"
           onChange={this.onChange}
           value={this.state.date}
         />

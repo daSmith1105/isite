@@ -31,6 +31,7 @@ class Header extends React.Component {
                          src={Logo} 
                          alt="logo" 
                          onClick={ () => history.pushState('/') } />
+                    <p className="data-usage">Data Usage: <span className="norm">1.0GB</span> of 10GB</p>
                 </div>   
             )
         }

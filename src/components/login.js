@@ -6,7 +6,7 @@ const Login = props => {
 
 
     return (
-        <div className="dash-container">
+        <div className="login-container">
             <p className="dividia">DIVIDIA TECHNOLOGIES</p>
             <img className="main-logo" src={Logo} alt="logo" />
             <form onSubmit={ props.handleSubmit }> 

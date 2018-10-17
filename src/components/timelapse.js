@@ -92,12 +92,9 @@ runSearch(e) {
 
     closeModal() {
         this.setState({ submitted: false })
-        this.exit(this.play());
     }
 
-    exit() {
-        return;
-    }
+   
   
 
  
@@ -136,8 +133,11 @@ runSearch(e) {
     {this.state.submitted ? 
         <div className="timelapse-viewer" id="map-container">
         <button className="cancel" onClick={this.closeModal}><span role="img" aria-label="cached">&#x274C;</span></button>
-            <img className="timelapse-img" id="timelapse-img" alt="img" src=''/>
-            <button onClick={this.play}>PLAY</button>
+            <img className="timelapse-img" id="timelapse-img" alt="img" src='https://dentalmedicalsales.com/wp-content/uploads/2018/08/white-play-crop232-396x38416-1.png'/>
+            <div className="timelapse-btn-grp">
+                <button onClick={this.play}>PLAY</button>
+                <button>STOP</button>
+            </div>
         </div> : null }
       </div>
     )
