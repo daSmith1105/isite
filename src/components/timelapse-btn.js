@@ -31,7 +31,7 @@ class TimelapseBtn extends React.Component {
                 </div>
                     <p className="desc">Timelapse</p>
                     <div>
-                        { this.state.showPicker ? <Timelapse close={this.closePicker} /> : null }
+                        { this.state.showPicker ? <Timelapse close={this.closePicker} images={this.props.imgArr} siteName={this.props.siteName} /> : null }
                     </div>
             </div>
 

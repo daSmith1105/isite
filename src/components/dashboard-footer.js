@@ -19,7 +19,7 @@ class Footer extends React.Component {
             return (
                 <div className="dash-footer">
                     <Back />
-                    <TimelapseBtn />
+                    <TimelapseBtn imgArr={this.props.images} siteName={this.props.siteName} />
                     <EventsBtn vidArr={this.props.vids} />
                     <OptionsBtn snapIt={ this.props } />
                 </div>
