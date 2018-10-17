@@ -12,6 +12,20 @@ class Events extends React.Component {
         this.move = this.move.bind(this);
     }
 
+    expand(e) {
+        e.preventDefault();
+        var target = e.currentTarget;
+        var tId = target.name;
+        var elem = document.getElementById(`event-${tId}`); 
+        if(elem.style.height === "32px") {
+            elem.style.height = "120px";
+            target.innerHTML = `&#8679;`
+        } else {
+            elem.style.height = "32px"
+            target.innerHTML = `&#8681;`
+        }
+    }
+
 
     move(e) {
         var target = e.currentTarget;
@@ -25,6 +39,8 @@ class Events extends React.Component {
             clearInterval(id);
             target.className = 'retrieved';
             target.innerHTML = "Watch";
+            let cachedEvent = document.getElementById(`cached-${vidId}`)
+            cachedEvent.innerHTML = `&#9989;`
             
           } else {
             width++;
@@ -100,8 +116,10 @@ class Events extends React.Component {
             let thumbTime = `${hour}:${minute} ${daynight}`;  
             let dateAndTime = `${fullDate}   ${thumbTime}`;
             return (
-                <li className="video-event-li" key={video.bID}>
+                <li id={`event-${video.bID}`} className="video-event-li" key={video.bID}>
+                <p id={`cached-${video.bID}`} className="cached"></p>
                     <p className="video-timestamp">{dateAndTime}</p>
+                    <button className="expander" name={video.bID} onClick={this.expand}>&#8681;</button>
                     <div className="progress-block">
                         <div id="progress-bar-container">
                             <div id={`progress-bar-${video.bID}`} className="progress-bar"></div> 
@@ -118,7 +136,7 @@ class Events extends React.Component {
         <div className="events-wrapper">
                 <div className="events-container">
                     <button className="cancel" onClick={this.props.close}><span role="img" aria-label="close">&#x274C;</span></button>
-                    <h1>Events</h1>
+                    <h1>Video Events</h1>
                     <ul className="video-container">
                         {map}
                     </ul>

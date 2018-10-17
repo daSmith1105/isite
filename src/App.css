@@ -8,6 +8,7 @@
   background: url('./steel.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  position: fixed;
 }
 
 .b-align-center {
@@ -358,6 +359,7 @@
   background: url('./steel.jpg');
   z-index: 10;
   border-radius: 1em;
+  box-shadow: 1px 1px 2px 2px rgba(255,255,255,.8);
 }
 
 .cancel {
@@ -384,12 +386,14 @@
 .date-error {
   color: red;
   font-size: 90%;
+  font-weight: bold;
   background: rgba(255,255,255,.6);
   padding: .5em;
-  width: 80%;
+  width: 90%;
   margin-right: auto;
   margin-left: auto;
   border-radius: .5em;
+  box-shadow: 1px 1px 2px 2px rgba(0,0,0,.7);
 }
 
 .timelapse-container label {
@@ -408,6 +412,7 @@
   font-size: 90%;
   border-radius: .5em;
   width: 130px;
+  box-shadow: 1px 1px 2px 2px rgba(0,0,0,.7);
 }
 
 .timelapse-submit-btn {
@@ -418,6 +423,7 @@
   border: 2px solid black;
   border-radius: .5em;
   transition: .5s;
+  box-shadow: 1px 1px 2px 2px rgba(0,0,0,.7);
 }
 
 .timelapse-submit-btn:hover {
@@ -465,6 +471,23 @@
   font-size: 160%;
 }
 
+.expander {
+  margin-left: 1em;
+  font-size: 160%;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 2px solid black;
+  border-radius: .5em;
+  width: 1.7em;
+  box-shadow: 2px 2px 1px 1px rgba(0,0,0,.6);
+  background: url('./steel.jpg');
+  color: green;
+  text-align: center;
+  padding-right: .25em;
+}
+
 .video-event-li {
   margin: 0;
   list-style-type: none;
@@ -478,6 +501,9 @@
   right: 25px;
   transition: 1s;
   box-shadow: 2px 2px 2px 2px rgba(0,0,0,.5);
+  height: 32px;
+  overflow: hidden;
+  transition: 1s;
 }
 
 .video-event-li p {
@@ -497,7 +523,7 @@
   float: left;
   margin-left: .25em;
   margin-right: .25em;
-  margin-top: .55em;
+  margin-top: 2em;
 }
 
 .progress-bar {
@@ -508,6 +534,13 @@
   margin-left: .1em;
 }
 
+.cached {
+  position: absolute;
+  top: 0;
+  left: 1em;;
+  font-weight: bold;
+}
+
 .download-btn {
   border: 2px solid black;
   border-radius: .5em;
@@ -516,7 +549,9 @@
   font-weight: bold;
   clear: both;
   background: transparent;
-  margin-left: 160px;
+  margin-left: 120px;
+  margin-top: .5em;
+  box-shadow: 2px 2px 1px 1px rgba(0,0,0,.6);
 }
 
 .download-btn:hover {
@@ -532,11 +567,14 @@
   font-weight: bold;
   clear: both;
   background: green;
-  margin-left: 160px;
+  margin-left: 120px;
   color: white;
   width: 85px;
+  margin-top: .5em;
+  box-shadow: 2px 2px 1px 1px rgba(0,0,0,.6);
 }
 
 .percentage {
   float: left;
+  padding-top: 1.7em;;
 }
